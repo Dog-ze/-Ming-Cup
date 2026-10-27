@@ -1,0 +1,28 @@
+# 本机及生产环境的真实配置：其中可能包含密码和 API 密钥
+backend/src/main/resources/application-local.yml
+backend/src/main/resources/application-production.yml
+
+# 前端本机环境变量；只提交 .example 模板文件
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.*.example
+
+# 前端依赖与构建产物
+**/node_modules/
+**/dist/
+
+# Java 编译产物
+**/target/
+
+# IDE 本机设置
+**/.idea/
+**/.vscode/
+
+# 用户上传的图片及运行日志
+backend/uploads/
+**/logs/
+*.log
+
+# 个人开发笔记与方案文档
+study/

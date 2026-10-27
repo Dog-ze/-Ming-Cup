@@ -1,0 +1,21 @@
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/yizhanming?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+  admin-jwt:
+    secret: ${ADMIN_JWT_SECRET}
+  amap:
+    web-service-key: ${AMAP_WEB_SERVICE_KEY}
+  ai:
+    deepseek:
+      base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+      api-key: ${DEEPSEEK_API_KEY}
+      model: ${DEEPSEEK_CHAT_MODEL:deepseek-chat}

@@ -1,0 +1,12 @@
+:root {
+  font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+  color: #213a31;
+  background: #f5f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 1200px; min-height: 100vh; }
+button, input { font: inherit; }
+#app { min-height: 100vh; }

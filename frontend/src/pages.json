@@ -1,0 +1,83 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/home",
+      "style": {
+        "navigationBarTitleText": "今日一品",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/pairing/pairing",
+      "style": {
+        "navigationBarTitleText": "茶点",
+        "enablePullDownRefresh": true
+      }
+    },
+    {
+      "path": "pages/pairing/nearby",
+      "style": {
+        "navigationBarTitleText": "附近茶食"
+      }
+    },
+    {
+      "path": "pages/record/list",
+      "style": {
+        "navigationBarTitleText": "茶记"
+      }
+    },
+    {
+      "path": "pages/profile/profile",
+      "style": {
+        "navigationBarTitleText": "个人"
+      }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/questionnaire/questionnaire",
+      "style": {
+        "navigationBarTitleText": "饮茶偏好问卷"
+      }
+    },
+    {
+      "path": "pages/record/edit",
+      "style": {
+        "navigationBarTitleText": "记录品茶"
+      }
+    },
+    {
+      "path": "pages/ai-chat/chat",
+      "style": {
+        "navigationBarTitleText": "AI 问茶"
+      }
+    },
+    {
+      "path": "pages/points/points",
+      "style": { "navigationBarTitleText": "积分中心" }
+    }
+  ],
+  "tabBar": {
+    "custom": true,
+    "color": "#748178",
+    "selectedColor": "#285943",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      { "pagePath": "pages/home/home", "text": "今日一品" },
+      { "pagePath": "pages/pairing/pairing", "text": "茶点" },
+      { "pagePath": "pages/record/list", "text": "茶记" },
+      { "pagePath": "pages/profile/profile", "text": "个人" }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "一盏茗",
+    "navigationBarBackgroundColor": "#F5F8F3",
+    "backgroundColor": "#F5F8F3"
+  }
+}

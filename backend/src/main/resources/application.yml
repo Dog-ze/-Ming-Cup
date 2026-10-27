@@ -1,0 +1,90 @@
+server:
+  port: 8080
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+  datasource:
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/yizhanming?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jackson:
+    time-zone: Asia/Shanghai
+  flyway:
+    # 迁移先在测试库开启；生产发布前通过环境变量显式启用。
+    enabled: ${FLYWAY_ENABLED:false}
+    locations: classpath:db/migration
+    # 已存在的数据库首次接入时仅登记为 V1，不重复执行当前基线脚本。
+    baseline-on-migrate: true
+    baseline-version: 1
+    validate-on-migrate: true
+    clean-disabled: true
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+
+app:
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:*,http://127.0.0.1:*}
+  jwt:
+    secret: ${JWT_SECRET}
+    expire-hours: 168
+  weather:
+    connect-timeout-seconds: 3
+    read-timeout-seconds: 3
+    cache-minutes: 30
+    stale-cache-minutes: 360
+    default-city: 北京市
+    default-longitude: 116.4074
+    default-latitude: 39.9042
+  record-image:
+    record-directory: uploads/records
+    max-file-size-bytes: 5242880
+  avatar:
+    directory: uploads/avatars
+    max-file-size-bytes: 5242880
+  osm:
+    enabled: true
+    base-url: https://overpass-api.de
+    default-radius-meters: 3000
+    max-radius-meters: 5000
+  amap:
+    web-service-key: ${AMAP_WEB_SERVICE_KEY}
+    place-search-enabled: true
+    base-url: https://restapi.amap.com
+    connect-timeout-seconds: 3
+    read-timeout-seconds: 3
+    failure-cooldown-seconds: 30
+    default-radius-meters: 3000
+    max-radius-meters: 5000
+  admin-jwt:
+    secret: ${ADMIN_JWT_SECRET}
+    expire-hours: 8
+  store-image:
+    directory: uploads/stores
+    max-file-size-bytes: 5242880
+  admin-image:
+    directory: uploads/admin
+    max-file-size-bytes: 5242880
+  ai:
+    deepseek:
+      base-url: ${DEEPSEEK_BASE_URL}
+      api-key: ${DEEPSEEK_API_KEY}
+      model: ${DEEPSEEK_CHAT_MODEL}
+      brew-guide-requests-per-minute: 5
+      chat-requests-per-minute: 5
+      brew-guide-max-tokens: 500
+      chat-max-tokens: 800
+      connect-timeout-seconds: 5
+      read-timeout-seconds: 30
+  points:
+    timezone: Asia/Shanghai
+    daily-claim: 20
+    questionnaire-first: 20
+    tea-record-daily: 10
+    brew-guide-cost: 5
+    chat-cost: 10
+

@@ -1,0 +1,35 @@
+# 仅作为生产环境配置模板：不要在此文件填写真实密码、JWT 密钥或高德 Key。
+# 部署服务器时复制为私有配置，或改用同名环境变量提供这些值。
+spring:
+  config:
+    activate:
+      on-profile: production
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    validate-on-migrate: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+  admin-jwt:
+    secret: ${ADMIN_JWT_SECRET}
+  amap:
+    web-service-key: ${AMAP_WEB_SERVICE_KEY}
+  ai:
+    deepseek:
+      base-url: ${DEEPSEEK_BASE_URL:https://api.deepseek.com}
+      api-key: ${DEEPSEEK_API_KEY}
+      model: ${DEEPSEEK_CHAT_MODEL:deepseek-chat}
+  record-image:
+    record-directory: ${APP_RECORD_IMAGE_RECORD_DIRECTORY:/data/yizhanming/uploads/records}
+  avatar:
+    directory: ${APP_AVATAR_DIRECTORY:/data/yizhanming/uploads/avatars}
+  store-image:
+    directory: ${APP_STORE_IMAGE_DIRECTORY:/data/yizhanming/uploads/stores}
+  admin-image:
+    directory: ${APP_ADMIN_IMAGE_DIRECTORY:/data/yizhanming/uploads/admin}
